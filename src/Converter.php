@@ -785,14 +785,14 @@ class Converter
             return '[' . $buffer . ']()';
         }
 
-        if ($buffer == $tag['href'] && empty($tag['title'])) {
+        if (false && $buffer == $tag['href'] && empty($tag['title'])) {
             // <http://example.com>
             return '<' . $buffer . '>';
         }
 
         $bufferDecoded = $this->decode(trim($buffer));
         if (substr($tag['href'], 0, 7) == 'mailto:' && 'mailto:' . $bufferDecoded == $tag['href']) {
-            if (is_null($tag['title'])) {
+            if (false && is_null($tag['title'])) {
                 // <mail@example.com>
                 return '<' . $bufferDecoded . '>';
             }
